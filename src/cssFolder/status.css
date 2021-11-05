@@ -1,0 +1,112 @@
+.status__container {
+  height: 80vh;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: white;
+  margin: 0 10px;
+}
+.status__flex {
+  /* display: flex; */
+  margin: 0;
+  padding: 0;
+}
+.whole__status {
+  margin: 0 10px;
+  display: flex;
+}
+.my__status {
+  display: flex;
+  height: 15%;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid darkslategray;
+}
+.a__status {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.plus__status {
+  color: green;
+  font-size: 20px;
+  position: absolute;
+  bottom: 40px;
+  left: 70px;
+  border-radius: 50%;
+}
+.mine {
+  border-color: gray;
+  position: relative;
+  margin-left: 30px;
+}
+/* .my__status:hover {
+    background-color: green;
+    color:white;
+} */
+.status__span {
+  margin-left: 50px;
+  margin-top: 20px;
+  width: 100%;
+}
+.input__status {
+  visibility: hidden;
+  width: 10px;
+}
+label {
+  margin-left: 50px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.contacts__status {
+  height: 75%;
+  overflow-y: scroll;
+}
+.recent__status {
+  background-color: darkslategray;
+  padding-left: 10px;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+}
+.status__div {
+  margin-left: 40px;
+}
+.status__list {
+  display: flex;
+  padding: 0;
+  padding-left: 30px;
+  padding-bottom: 5px;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2px);
+  z-index: 9999;
+}
+.status__display {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.904);
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.hidden {
+  display: none;
+}
+.white__arrow {
+  position: absolute;
+  color: white;
+  top: 100px;
+  left: 50px;
+}

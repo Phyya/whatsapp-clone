@@ -1,0 +1,129 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2px);
+  z-index: 9999;
+}
+.modal {
+  background-color: lightgray;
+  color: gray;
+  padding: 10px 20px;
+  height: auto;
+  width: 250px;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+}
+.close__icon {
+  margin: auto;
+}
+.modal__paragraph {
+  margin: 30px auto;
+  font-size: 13px;
+  color: darkslategray;
+}
+.modal__spinner {
+  display: flex;
+  justify-content: center;
+}
+.full__height {
+  align-items: center;
+  height: 100%;
+}
+.modal__spinner::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 10px solid #dddddd;
+  border-top-color: #009679;
+  animation: loading 1s ease infinite;
+}
+@keyframes loading {
+  to {
+    transform: rotate(1turn);
+  }
+}
+.modal__pic {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform: translate(-50%, -240%);
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  background-color: transparent;
+}
+.modal__pic img {
+  width: 100%;
+  height: 100%;
+}
+.modal__onboarding {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  width: 100%;
+  color: #009679;
+  bottom: 0;
+  position: fixed;
+}
+.modal__pic__icons {
+  display: flex;
+  justify-content: space-evenly;
+  height: 30px;
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  background-color: darkslategray;
+}
+.gray__header {
+  background-color: #009679;
+  height: 20px;
+  width: 100%;
+  position: fixed;
+}
+.modal__pic__icon1 {
+  color: green;
+  margin-top: 3px;
+  font-size: 20px;
+}
+.modal__sideOption {
+  background-color: darkslategray;
+  height: auto;
+  width: 200px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  padding: 5px;
+  padding-top: 20px;
+}
+.modal__sideOption__chat {
+  background-color: white;
+  height: auto;
+  width: 200px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  padding: 5px;
+  padding-top: 20px;
+}
+.list__item__sidebar {
+  background-color: darkslategray;
+  color: white;
+  list-style: none;
+}
+.list__item {
+  margin-bottom: 5px;
+  height: 40px;
+  padding-left: 5px;
+}
+.list__item__chat {
+  background-color: white;
+  color: black;
+  list-style: none;
+}

@@ -1,0 +1,33 @@
+.mymessage {
+    background-color: lightgreen;
+    margin-left:auto;
+    border-radius:10px;
+    margin-bottom: 10px;
+    width:fit-content;
+    position:relative;
+    padding:15px;
+    font-size: 15px;
+}
+.theirmessage {
+    background-color: white;
+    margin-right:auto;
+    border-radius:10px;
+    margin-bottom: 10px;
+    width:fit-content;
+    position:relative;
+    padding:15px;
+    font-size: 15px;
+}
+.timestamp {
+    position:absolute;
+    bottom:1px;
+    right:1px;
+    font-size: 10px;
+}
+.gray__tick{
+    color:darkslategray;
+    position: absolute;
+    bottom:1px;
+    left:1px;
+
+}
