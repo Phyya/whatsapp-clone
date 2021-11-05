@@ -23,8 +23,8 @@ const Chat = ({ id, user }) => {
     messageEndRef.current?.scrollIntoView();
   };
 
-  const [database] = useState(JSON.parse(localStorage.getItem("database")));
-  const [idStored] = useState(JSON.parse(localStorage.getItem("id")));
+  const database = JSON.parse(localStorage.getItem("database"));
+  const idStored = JSON.parse(localStorage.getItem("id"));
 
   const friend = database.find((contact) =>
     idStored ? contact.id === idStored : contact.id === id
