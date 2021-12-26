@@ -151,21 +151,24 @@ const NewChat = ({ friends, user }) => {
               )}
             </div>
           ) }
-<div className="newchat">
-             {!emptyChat ? <>
+
+{emptyChat ? <div className="newchat">
  <p>
                 Start a new chat. Click the "+" button to see your contacts{" "}
               </p>
  <button className="green__round" onClick={newchatHandler}>
                   +
                 </button>
-</>
-            :  (
+
+            </div> : 
+<div className="newchat">
+
                 <button className="green__round" onClick={newchatHandler}>
                   +
                 </button>  
-              )}
             </div>
+ }
+
 
         </div>
       </div>
