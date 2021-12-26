@@ -19,7 +19,7 @@ const NewChat = ({  user }) => {
   const [emptyChat, setEmptyChat] = useState(true);
 
   const [database] = useState(JSON.parse(localStorage.getItem("database")));
-  const [friendsList, setFriendsList] = useState([]);
+  const [friendsList, setFriendsList] = useState(database.filter((user) => user.messages.length !== 0));
 
 const friendsSorted = friendsList.sort(function (a, b) {
     return Object.values(a.messages[a.messages.length - 1])[1] <
@@ -62,11 +62,7 @@ const friendsSorted = friendsList.sort(function (a, b) {
     setprofileId("");
     setprofilePic(false);
   };
-useEffect(()=> {
-const filtered = database.filter((user) => user.messages.length !== 0)
-setFriendsList(filtered)
-}, []
-)
+
   return (
     <>
       <div>
