@@ -26,9 +26,6 @@ const NewChat = ({ friends, user }) => {
   const [database] = useState(JSON.parse(localStorage.getItem("database")));
   const [friendsList, setFriendsList] = useState(friends);
 
-useEffect(()=> {
-setFriendsList(friends)
-}, [])
 
 
   const newchatHandler = () => {
@@ -94,7 +91,7 @@ setFriendsList(friends)
 {friendsList.map(f=> <p>{f.name} friend list</p>)}
 {friends.map(f=> <p>{f.name} all friends</p>)}
 
-          {friends.length !== 0 ? (
+          {friendsList.length !== 0 ? (
             <div className="contact__list">
 
               {contacts.length === 0 ? (
