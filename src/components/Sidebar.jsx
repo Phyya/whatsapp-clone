@@ -1,9 +1,16 @@
+import {useEffect, useState} from "react"
 import NewChat from "./NewChat";
 import "../cssFolder/Sidebar.css";
 
+const database =JSON.parse(localStorage.getItem("database"))
+
+
 const Sidebar = ({ user }) => {
-  const database = JSON.parse(localStorage.getItem("database"));
-  const friendsList = database.filter((user) => user.messages.length !== 0);
+
+const [friendsList, setFriendsList] = useState()
+useEffect(()=> setFriendsList(database.filter((user) => user.messages.length !== 0))
+, [])
+
 
   return (
     <div className="sidebar">
