@@ -27,7 +27,10 @@ const NewChat = ({ friends, user }) => {
   const [friendsList, setFriendsList] = useState(friends);
 
 useEffect(()=> {
-}, [])
+setFriendsList(friends)
+}, [friends])
+
+
   const newchatHandler = () => {
 
     setEmptyChat(false);
@@ -91,7 +94,7 @@ useEffect(()=> {
 {friendsList.map(f=> <p>{f.name} friend list</p>)}
 {friends.map(f=> <p>{f.name} all friends</p>)}
 
-          {friendsList.length !== 0 ? (
+          {friends.length !== 0 ? (
             <div className="contact__list">
 
               {contacts.length === 0 ? (
