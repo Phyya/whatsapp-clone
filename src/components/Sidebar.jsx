@@ -13,7 +13,7 @@ useEffect(()=> {
 const filtered = database.filter((user) => user.messages.length !== 0)
 setFriendsList(filtered)
 }
-, [])
+)
 
 
   return (
