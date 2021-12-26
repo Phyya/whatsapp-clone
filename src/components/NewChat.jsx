@@ -86,7 +86,7 @@ const NewChat = ({ friends, user }) => {
         <div className="display__chat">
 {friendsList.length} friends list
 {friends.length} all friends
-          {friends.length > 0 ? (
+          {friends.length > 0 && (
             <div className="contact__list">
               {contacts.length === 0 ? (
                 friendsSorted.map((contact, index) => {
@@ -150,18 +150,23 @@ const NewChat = ({ friends, user }) => {
                 />
               )}
             </div>
-          ) : (
-            <div className="newchat">
-              <p>
+          ) }
+<div className="newchat">
+             {!emptyChat ? <>
+ <p>
                 Start a new chat. Click the "+" button to see your contacts{" "}
               </p>
-              {emptyChat && (
-                <button className="green__round" onClick={newchatHandler}>
+ <button className="green__round" onClick={newchatHandler}>
                   +
                 </button>
+</>
+            :  (
+                <button className="green__round" onClick={newchatHandler}>
+                  +
+                </button>  
               )}
             </div>
-          )}
+
         </div>
       </div>
       {profilePic && <PortalPic pic={profileId} nodisplay={removeImage} />}
