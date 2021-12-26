@@ -5,7 +5,8 @@ import "../cssFolder/Sidebar.css";
 
 
 const Sidebar = ({ user }) => {
-
+const database = 
+const [friends, setFriends] = useState(database.filter((user) => user.messages.length !== 0));
 
 
   return (
