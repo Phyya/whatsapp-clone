@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import * as BsIcons from "react-icons/bs";
 import * as AiIcons from "react-icons/ai";
@@ -26,6 +26,8 @@ const NewChat = ({ friends, user }) => {
   const [database] = useState(JSON.parse(localStorage.getItem("database")));
   const [friendsList, setFriendsList] = useState(friends);
 
+useEffect(()=> {
+}, [])
   const newchatHandler = () => {
 
     setEmptyChat(false);
@@ -86,6 +88,8 @@ const NewChat = ({ friends, user }) => {
         )}
 
         <div className="display__chat">
+{friendsList.map(f=> <p>{f.name}</p>)}
+
           {friendsList.length !== 0 ? (
             <div className="contact__list">
 
