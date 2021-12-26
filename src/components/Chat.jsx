@@ -56,6 +56,7 @@ const Chat = ({ id, user }) => {
   }, [isChatting]);
 
   const handleChange = (e) => {
+    setIsChatting(true)
     setnewMessage(e.target.value);
   };
   const modalOptions = () => {
@@ -66,6 +67,7 @@ const Chat = ({ id, user }) => {
   const sendMessage = (e) => {
     e.preventDefault();
     setIsChatting(false);
+if(newMessage === "") return
     const date = Date().slice(16, 21);
     const addingNewMine = {
       myMessage: newMessage,
