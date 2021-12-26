@@ -34,7 +34,6 @@ const NewChat = ({ friends, user }) => {
     );
     setContacts([...newContacts]);
     setFriendsList(newContacts)
-}
 
   };
 
