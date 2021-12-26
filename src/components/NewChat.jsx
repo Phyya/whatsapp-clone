@@ -33,7 +33,7 @@ const NewChat = ({ friends, user }) => {
       (contact) => contact.user !== user.user
     );
     setContacts([...newContacts]);
-    setFriendsList(newContacts)
+   
 
   };
 
@@ -86,7 +86,7 @@ const NewChat = ({ friends, user }) => {
         )}
 
         <div className="display__chat">
-          {friends.length > 0 ? (
+          {friendsList.length > 0 ? (
             <div className="contact__list">
 
               {contacts.length === 0 ? (
