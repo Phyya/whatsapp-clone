@@ -18,7 +18,7 @@ const NewChat = ({ friends, user }) => {
   const [profileId, setprofileId] = useState("");
   const [profilePic, setprofilePic] = useState(false);
   const [modalView, setmodalView] = useState(false);
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState();
   const [searchDisplay, setSearchDisplay] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [emptyChat, setEmptyChat] = useState(true);
@@ -33,7 +33,7 @@ const NewChat = ({ friends, user }) => {
       (contact) => contact.user !== user.user
     );
     setContacts([...newContacts]);
-   
+   setFriendsList(newContacts)
 
   };
 
@@ -86,7 +86,7 @@ const NewChat = ({ friends, user }) => {
         )}
 
         <div className="display__chat">
-          {friendsList.length > 0 ? (
+          {friendsList.length !== 0 ? (
             <div className="contact__list">
 
               {contacts.length === 0 ? (
