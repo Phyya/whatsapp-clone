@@ -8,7 +8,7 @@ import ContactsList from "./ContactsList";
 export let contacts;
 export let UserId;
 
-const NewChat = ({  user }) => {
+const NewChat = ({  user, friends, setFriends}) => {
   
   const [profileId, setprofileId] = useState("");
   const [profilePic, setprofilePic] = useState(false);
@@ -19,9 +19,8 @@ const NewChat = ({  user }) => {
   const [emptyChat, setEmptyChat] = useState(true);
 
   const [database] = useState(JSON.parse(localStorage.getItem("database")));
-  const [friendsList, setFriendsList] = useState(database.filter((user) => user.messages.length !== 0));
-
-const friendsSorted = friendsList.sort(function (a, b) {
+  const [friendsList, setFriendsList] = useState(friends)
+const friendsSorted = friends.sort(function (a, b) {
     return Object.values(a.messages[a.messages.length - 1])[1] <
       Object.values(b.messages[b.messages.length - 1])[1]
       ? 1
@@ -62,7 +61,6 @@ const friendsSorted = friendsList.sort(function (a, b) {
     setprofileId("");
     setprofilePic(false);
   };
-
   return (
     <>
       <div>
@@ -88,7 +86,7 @@ const friendsSorted = friendsList.sort(function (a, b) {
         )}
 
         <div className="display__chat">
-{friendsList.map(f=> <p>{f.name} friend list</p>)}
+
 
 
           {friendsList.length !== 0 ? (
