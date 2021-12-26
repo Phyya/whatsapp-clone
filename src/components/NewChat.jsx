@@ -27,12 +27,15 @@ const NewChat = ({ friends, user }) => {
   const [friendsList, setFriendsList] = useState(friends);
 
   const newchatHandler = () => {
+if(emptyChat){
     setEmptyChat(false);
     const newContacts = database.filter(
       (contact) => contact.user !== user.user
     );
     setContacts([...newContacts]);
-    setFriendsList(newContacts);
+    setFriendsList(newContacts)
+}
+else setEmptyChat(true)
   };
 
   const chatRender = (id) => {
@@ -88,6 +91,7 @@ const NewChat = ({ friends, user }) => {
 {friends.length} all friends
           {friends.length > 0 && (
             <div className="contact__list">
+
               {contacts.length === 0 ? (
                 friendsSorted.map((contact, index) => {
                   return (
@@ -142,6 +146,10 @@ const NewChat = ({ friends, user }) => {
                     </>
                   );
                 })
+
+
+                
+            
               ) : (
                 <ContactsList
                   contactsTodisplay={contacts}
@@ -149,10 +157,13 @@ const NewChat = ({ friends, user }) => {
                   viewImage={viewImage}
                 />
               )}
+<button className="green__round" onClick={newchatHandler}>
+                  +
+                </button>  
             </div>
           ) }
 
-{emptyChat && friends.length < 1 ? <div className="newchat">
+{emptyChat && friends.length < 1 && <div className="newchat">
  <p>
                 Start a new chat. Click the "+" button to see your contacts{" "}
               </p>
@@ -160,13 +171,8 @@ const NewChat = ({ friends, user }) => {
                   +
                 </button>
 
-            </div> : 
-<div className="newchat">
+            </div> 
 
-                <button className="green__round2" onClick={newchatHandler}>
-                  +
-                </button>  
-            </div>
  }
 
 
