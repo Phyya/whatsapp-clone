@@ -5,7 +5,7 @@ import "../cssFolder/Sidebar.css";
 
 
 const Sidebar = ({ user }) => {
-const database = 
+const database = JSON.parse(localStorage.getItem("database"))
 const [friends, setFriends] = useState(database.filter((user) => user.messages.length !== 0));
 
 
@@ -13,7 +13,7 @@ const [friends, setFriends] = useState(database.filter((user) => user.messages.l
     <div className="sidebar">
       <div className="sidebar__chats">
 
-        <NewChat user={user}  />
+        <NewChat user={user} friends ={friends} />
       </div>
     </div>
   );
