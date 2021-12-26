@@ -150,7 +150,8 @@ const Chat = ({ id, user }) => {
 
           <div className="chat__input__icons">
             
-            {!isChatting && <FaIcons.FaTelegramPlane
+            {!isChatting ?
+ <FaIcons.FaTelegramPlane
                 onClick={sendMessage}
                 className="plane"
               /> : (
