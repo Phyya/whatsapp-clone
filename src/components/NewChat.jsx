@@ -87,8 +87,6 @@ else setEmptyChat(true)
         )}
 
         <div className="display__chat">
-{friendsList.length} friends list
-{friends.length} all friends
           {friends.length > 0 && (
             <div className="contact__list">
 
@@ -157,7 +155,7 @@ else setEmptyChat(true)
                   viewImage={viewImage}
                 />
               )}
-<button className="green__round" onClick={newchatHandler}>
+<button className="green__round2" onClick={newchatHandler}>
                   +
                 </button>  
             </div>
