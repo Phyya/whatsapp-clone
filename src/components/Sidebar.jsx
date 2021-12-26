@@ -8,7 +8,11 @@ const database =JSON.parse(localStorage.getItem("database"))
 const Sidebar = ({ user }) => {
 
 const [friendsList, setFriendsList] = useState()
-useEffect(()=> setFriendsList(database.filter((user) => user.messages.length !== 0))
+
+
+useEffect(()=> {
+const filtered = database.filter((user) => user.messages.length !== 0)
+setFriendsList(filtered)
 , [])
 
 
