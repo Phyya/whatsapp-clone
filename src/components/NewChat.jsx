@@ -86,7 +86,7 @@ const NewChat = ({ friends, user }) => {
         )}
 
         <div className="display__chat">
-          {friends.length > 0 && (
+          {friendsList.length > 0 ? (
             <div className="contact__list">
 
               {contacts.length === 0 ? (
@@ -155,10 +155,7 @@ const NewChat = ({ friends, user }) => {
                 </button>  
             </div>
           ) 
-
-}
-
-{emptyChat && friends.length < 1 && <div className="newchat">
+: <div className="newchat">
  <p>
                 Start a new chat. Click the "+" button to see your contacts{" "}
               </p>
@@ -167,8 +164,8 @@ const NewChat = ({ friends, user }) => {
                 </button>
 
             </div> 
+}
 
- }
 
 
         </div>
