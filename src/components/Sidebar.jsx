@@ -19,7 +19,7 @@ setFriendsList(filtered)
   return (
     <div className="sidebar">
       <div className="sidebar__chats">
-{friendsList.map(f => <p> {f.name} </p>)
+{friendsList.map(f => <p> {f.name} </p>)}
         <NewChat user={user} friends={friendsList} />
       </div>
     </div>
