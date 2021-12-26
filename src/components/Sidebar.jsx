@@ -8,7 +8,7 @@ const Sidebar = ({ user }) => {
   return (
     <div className="sidebar">
       <div className="sidebar__chats">
-        <NewChat user={user} friends={friendsList ? friendsList : []} />
+        <NewChat user={user} friends={friendsList} />
       </div>
     </div>
   );
