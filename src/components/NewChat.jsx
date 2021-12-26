@@ -24,7 +24,7 @@ const NewChat = ({ friends, user }) => {
   const [emptyChat, setEmptyChat] = useState(true);
 
   const [database] = useState(JSON.parse(localStorage.getItem("database")));
-  const [friendsList, setFriendsList] = useState(friends.length);
+  const [friendsList, setFriendsList] = useState(friends);
 
   const newchatHandler = () => {
     setEmptyChat(false);
@@ -32,7 +32,7 @@ const NewChat = ({ friends, user }) => {
       (contact) => contact.user !== user.user
     );
     setContacts([...newContacts]);
-    setFriendsList(newContacts.length);
+    setFriendsList(newContacts);
   };
 
   const chatRender = (id) => {
@@ -84,8 +84,9 @@ const NewChat = ({ friends, user }) => {
         )}
 
         <div className="display__chat">
-{friendsList}
-          {friendsList > 0 ? (
+{friendsList.length} friends list
+{friends} all friends
+          {friendsList.length > 0 ? (
             <div className="contact__list">
               {contacts.length === 0 ? (
                 friendsSorted.map((contact, index) => {
