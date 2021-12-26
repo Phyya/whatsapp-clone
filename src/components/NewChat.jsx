@@ -27,7 +27,7 @@ const NewChat = ({ friends, user }) => {
   const [friendsList, setFriendsList] = useState(friends);
 
   const newchatHandler = () => {
-if(emptyChat){
+
     setEmptyChat(false);
     const newContacts = database.filter(
       (contact) => contact.user !== user.user
@@ -35,7 +35,7 @@ if(emptyChat){
     setContacts([...newContacts]);
     setFriendsList(newContacts)
 }
-else setEmptyChat(true)
+
   };
 
   const chatRender = (id) => {
@@ -144,10 +144,6 @@ else setEmptyChat(true)
                     </>
                   );
                 })
-
-
-                
-            
               ) : (
                 <ContactsList
                   contactsTodisplay={contacts}
