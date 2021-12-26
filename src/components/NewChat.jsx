@@ -85,7 +85,7 @@ const NewChat = ({ friends, user }) => {
 
         <div className="display__chat">
 {friends.length}
-          {friendslist.length > 0 ? (
+          {friendsList.length > 0 ? (
             <div className="contact__list">
               {contacts.length === 0 ? (
                 friendsSorted.map((contact, index) => {
