@@ -28,7 +28,7 @@ const NewChat = ({ friends, user }) => {
 
 useEffect(()=> {
 setFriendsList(friends)
-}, [friends])
+}, [])
 
 
   const newchatHandler = () => {
