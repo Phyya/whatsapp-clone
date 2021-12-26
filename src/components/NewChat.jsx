@@ -86,7 +86,7 @@ const NewChat = ({ friends, user }) => {
         )}
 
         <div className="display__chat">
-          {friends.length != 0 && (
+          {friends.length > 0 && (
             <div className="contact__list">
 
               {contacts.length === 0 ? (
