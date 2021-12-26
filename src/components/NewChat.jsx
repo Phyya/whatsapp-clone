@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import * as BsIcons from "react-icons/bs";
 import * as AiIcons from "react-icons/ai";
@@ -8,37 +8,33 @@ import ContactsList from "./ContactsList";
 export let contacts;
 export let UserId;
 
-const NewChat = ({  user, friends, setFriends}) => {
-  
-  const [profileId, setprofileId] = useState("");
-  const [profilePic, setprofilePic] = useState(false);
-  const [modalView, setmodalView] = useState(false);
-  const [contacts, setContacts] = useState();
-  const [searchDisplay, setSearchDisplay] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [emptyChat, setEmptyChat] = useState(true);
-
-  const [database] = useState(JSON.parse(localStorage.getItem("database")));
-  const [friendsList, setFriendsList] = useState(friends)
-const friendsSorted = friends.sort(function (a, b) {
+const NewChat = ({ friends, user }) => {
+  const friendsSorted = friends.sort(function (a, b) {
     return Object.values(a.messages[a.messages.length - 1])[1] <
       Object.values(b.messages[b.messages.length - 1])[1]
       ? 1
       : -1;
   });
+  const [profileId, setprofileId] = useState("");
+  const [profilePic, setprofilePic] = useState(false);
+  const [modalView, setmodalView] = useState(false);
+  const [contacts, setContacts] = useState([]);
+  const [searchDisplay, setSearchDisplay] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [emptyChat, setEmptyChat] = useState(true);
+
+  const [database] = useState(JSON.parse(localStorage.getItem("database")));
+  const [friendsList, setFriendsList] = useState(friends.length);
 
   const newchatHandler = () => {
-
     setEmptyChat(false);
     const newContacts = database.filter(
       (contact) => contact.user !== user.user
     );
     setContacts([...newContacts]);
-   setFriendsList(newContacts)
-
+    setFriendsList(newContacts.length);
   };
-
-  const chatRender = (id) => {
+const chatRender = (id) => {
     UserId = id;
     localStorage.setItem("id", JSON.stringify(id));
   };
@@ -61,6 +57,7 @@ const friendsSorted = friends.sort(function (a, b) {
     setprofileId("");
     setprofilePic(false);
   };
+
   return (
     <>
       <div>
@@ -86,12 +83,8 @@ const friendsSorted = friends.sort(function (a, b) {
         )}
 
         <div className="display__chat">
-
-
-
-          {friendsList.length !== 0 ? (
+          {friendsList !== 0 ? (
             <div className="contact__list">
-
               {contacts.length === 0 ? (
                 friendsSorted.map((contact, index) => {
                   return (
@@ -153,24 +146,22 @@ const friendsSorted = friends.sort(function (a, b) {
                   viewImage={viewImage}
                 />
               )}
-<button className="green__round2" onClick={newchatHandler}>
-                  +
-                </button>  
-            </div>
-          ) 
-: <div className="newchat">
- <p>
-                Start a new chat. Click the "+" button to see your contacts{" "}
-              </p>
- <button className="green__round" onClick={newchatHandler}>
+  <button className="green__round2" onClick={newchatHandler}>
                   +
                 </button>
-
-            </div> 
-}
-
-
-
+            </div>
+          ) : (
+            <div className="newchat">
+              <p>
+                Start a new chat. Click the "+" button to see your contacts{" "}
+              </p>
+              {emptyChat && (
+                <button className="green__round" onClick={newchatHandler}>
+                  +
+                </button>
+              )}
+            </div>
+          )}
         </div>
       </div>
       {profilePic && <PortalPic pic={profileId} nodisplay={removeImage} />}
@@ -179,3 +170,4 @@ const friendsSorted = friends.sort(function (a, b) {
 };
 
 export default NewChat;
+            
