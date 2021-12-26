@@ -228,6 +228,20 @@ margin-left: 50px
   /* margin-left: 80%; */
   border: none;
 }
+.green__round2 {
+  background-color: #075e54;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 80px;
+  color: white;
+  position: absolute;
+  right: 15%;
+  bottom: 67%;
+  font-size: 18px;
+  /* margin-left: 80%; */
+  border: none;
+}
 .profile__container {
   display: flex;
   flex-direction: column;
