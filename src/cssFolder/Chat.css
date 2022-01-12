@@ -86,7 +86,7 @@
   justify-content: space-evenly;
 }
 .chat__body {
-  height: 90vh;
+  height: 85vh;
   background-image: url("../components/background.jpg");
   background-repeat: repeat;
   background-position: center;

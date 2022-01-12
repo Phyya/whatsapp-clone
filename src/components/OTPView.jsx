@@ -48,8 +48,8 @@ const OTPView = (props) => {
       <div className="otp__container">
         <div className="gray__header"></div>
         <p className="otp__paragraph">
-          A 4-digit code has been sent to you via SMS. Please enter it below.
-          (Any 4-digit code is allowed for now)
+        
+          Any 4-digit code is allowed for now.
         </p>
         <div className="otp__boxesDiv">
           {otp.map((data, index) => {
@@ -57,7 +57,7 @@ const OTPView = (props) => {
               <input
                 key={index}
                 className="otp__boxes"
-                type="text"
+                type="tel"
                 name="otp"
                 maxLength="1"
                 value={data}

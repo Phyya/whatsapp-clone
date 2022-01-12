@@ -87,7 +87,10 @@ if(newMessage === "") return
 
     //Updating user's message
     let updateUser = user;
-    updateUser.messages.push(addingNewMine);
+    console.log(user)
+    console.log(updateUser, "update")
+    
+    updateUser?.messages.push(addingNewMine);
 
     // Updating the database
     const friendIndex = database.findIndex((user) => user.id === friend.id);
